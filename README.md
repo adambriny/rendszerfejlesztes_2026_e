@@ -101,3 +101,5 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | ` Biztonsági hiányosságok (pl. SQL Injection)` | `Alacsony` | `Magas` | `Kizárólag PDO és előkészített lekérdezések (Prepared Statements) használata PHP-ban.` |
 | `Adatbázis-architektúra tervezési hibái` | `Közepes` | `Közepes` | `Az ER-diagram alapos előzetes átbeszélése és normalizálása a kódolás megkezdése előtt.` |
 | `Inkompatibilitási problémák a csapattagok között` | `Alacsony` | `Közepes` | `Közös Git konvenciók, egységes kötelező mappa- és fájlstruktúra meghatározása.` |
+
+
