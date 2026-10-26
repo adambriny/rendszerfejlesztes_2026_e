@@ -102,4 +102,71 @@ A projekt a következő technológiákat/szoftvereket fogja használni a munka s
 | `Adatbázis-architektúra tervezési hibái` | `Közepes` | `Közepes` | `Az ER-diagram alapos előzetes átbeszélése és normalizálása a kódolás megkezdése előtt.` |
 | `Inkompatibilitási problémák a csapattagok között` | `Alacsony` | `Közepes` | `Közös Git konvenciók, egységes kötelező mappa- és fájlstruktúra meghatározása.` |
 
+## 6. ER-diagram
 
+```mermaid
+erDiagram
+    USERS {
+        int id PK
+        string name
+        string email UK
+        string password_hash
+        string phone
+        string address
+        string role
+        string status
+        datetime created_at
+    }
+
+    CATEGORIES {
+        int id PK
+        string name
+        string description
+    }
+
+    LISTINGS {
+        int id PK
+        int user_id FK
+        int category_id FK
+        string title
+        string description
+        decimal price
+        string condition
+        string status
+        datetime created_at
+        datetime updated_at
+    }
+
+    LISTING_IMAGES {
+        int id PK
+        int listing_id FK
+        string image_path
+        int sort_order
+    }
+
+    ORDERS {
+        int id PK
+        int buyer_id FK
+        string status
+        decimal total_amount
+        string delivery_address
+        datetime created_at
+    }
+
+    ORDER_ITEMS {
+        int id PK
+        int order_id FK
+        int listing_id FK
+        int seller_id FK
+        decimal unit_price
+        int quantity
+    }
+
+    USERS ||--o{ LISTINGS : creates
+    CATEGORIES ||--o{ LISTINGS : categorizes
+    LISTINGS ||--o{ LISTING_IMAGES : has
+    USERS ||--o{ ORDERS : places
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    LISTINGS ||--o{ ORDER_ITEMS : purchased_as
+    USERS ||--o{ ORDER_ITEMS : sells
+```
