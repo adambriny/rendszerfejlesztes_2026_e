@@ -170,3 +170,55 @@ erDiagram
     LISTINGS ||--o{ ORDER_ITEMS : purchased_as
     USERS ||--o{ ORDER_ITEMS : sells
 ```
+
+## 7. Sequence diagram
+
+A diagram a hirdetés megtekintésétől a rendelés adatbázisba történő mentéséig mutatja be a folyamatot.
+
+```mermaid
+sequenceDiagram
+    actor Vevő
+    participant UI as Webes felület
+    participant Auth as Hitelesítés
+    participant Listing as Hirdetéskezelő
+    participant Order as Rendeléskezelő
+    participant DB as MySQL adatbázis
+
+    Vevő->>UI: Hirdetés megnyitása
+    UI->>Listing: Hirdetés lekérése (listing_id)
+    Listing->>DB: SELECT LISTINGS
+    DB-->>Listing: Hirdetés adatai
+    Listing->>DB: SELECT USERS (eladó adatai)
+    DB-->>Listing: Eladó adatai
+    Listing-->>UI: Hirdetés és eladó megjelenítése
+    UI-->>Vevő: Termék adatlapja
+
+    Vevő->>UI: Vásárlás / rendelés indítása
+    UI->>Auth: Bejelentkezés ellenőrzése
+    Auth->>DB: SELECT USERS (felhasználó)
+    DB-->>Auth: Felhasználói adatok
+    Auth-->>UI: Hitelesítés eredménye
+
+    alt Nincs bejelentkezve
+        UI-->>Vevő: Bejelentkezés kérése
+    else Bejelentkezve
+        UI->>Order: Rendelés létrehozása
+        Order->>DB: Hirdetés és státusz ellenőrzése
+        DB-->>Order: Hirdetés adatai
+
+        alt Hirdetés nem elérhető
+            Order-->>UI: Vásárlás elutasítása
+            UI-->>Vevő: A hirdetés már nem elérhető
+        else Hirdetés elérhető
+            Order->>DB: INSERT INTO ORDERS
+            DB-->>Order: order_id
+            Order->>DB: INSERT INTO ORDER_ITEMS
+            Note over Order,DB: order_id, listing_id, seller_id, unit_price, quantity
+            DB-->>Order: Rendelési tétel mentve
+            Order->>DB: UPDATE LISTINGS status = 'sold'
+            DB-->>Order: Hirdetés frissítve
+            Order-->>UI: Rendelés sikeres
+            UI-->>Vevő: Rendelés visszaigazolása
+        end
+    end
+```
