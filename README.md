@@ -222,3 +222,14 @@ sequenceDiagram
         end
     end
 ```
+## 8. Use Case Diagram
+```mermaid
+graph LR
+    User[Felhasználó / Vevő / Eladó] --> UC1[Regisztráció / Bejelentkezés]
+    User --> UC2[Profil módosítása]
+    User --> UC3[Hirdetés felvétele]
+    User --> UC4[Termékek böngészése]
+    User --> UC5[Kosárkezelés és rendelés]
+    
+    Admin[Adminisztrátor] --> UC1
+    Admin --> UC6[Moderálás és törlés]
