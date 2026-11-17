@@ -1,0 +1,235 @@
+E csoport
+## 1. Összefoglaló 
+
+`A projekt célja egy olyan C2C (Customer-to-Customer) típusú online piackert és hirdetési platform fejlesztése, ahol a regisztrált felhasználók egyetlen fiókkal képesek mind vevői, mind eladói szerepkört betölteni. A platformon a felhasználók saját termékeiket és szolgáltatásaikat tehetik közzé (képekkel, leírással, árazással), míg más felhasználók böngészhetnek, szűrhetnek a kategóriák között, és megrendelést adhatnak le. A rendszer célja a lakossági adásvétel egyszerűsítése egy átlátható, reszponzív és biztonságos webes felületen keresztül.`
+
+## 2. A projekt bemutatása
+
+`Ez a projektterv a webshop projektet mutatja be, amely 2026-09-07-től 2026-12-02-ig tart, azaz összesen 86 napon keresztül fog futni. A projekten három fejlesztő fog dolgozni, az elvégzett feladatokat pedig négy alkalommal fogjuk prezentálni a megrendelőnek, annak érdekében, hogy biztosítsuk a projekt folyamatos előrehaladását.`
+
+
+
+### 2.1. Rendszerspecifikáció
+
+`A projektunk célja egy olyan webshop létrehozása amely alkalmas arra hogy egy online felületett biztosítson eladásra és termékek megvételére. A weboldalunkon regisztráció majd azt követő bejelentkezés lesz szükséges a felhasználók számára.` Az online felületünk több felhasználó barát funkcióval is el lesz látva többek között a személyek saját profiljainak megtekintésére és módósitására valamint az adás-vételi előzmények megtekintésére.` A felhasználói felület számára biztositva lesz az is hogy saját termékeket illetve hirdetéseket töltsenek fel. A weboldalunk biztositja a felhasználók számára a gyors keresgélést az oldalon ezt pedig egy kereső funkcióval oldjuk meg.` A projektunk továbbá kiterjed a felhasználók kosarainak kezelésére. Illetve egy adminisztrátori felületet is létrehozunk annak érdekében hogy felügylejük az oldal biztonságát, a felhasználók hiteleségét illetve a hibátlan működést.
+
+
+### 2.2. Funkcionális követelmények
+
+* **Felhasználói fiók és jogosultságok:**
+  * `Regisztráció és bejelentkezés biztonságos jelszókezeléssel.`
+  * `Egyetlen regisztrált fiók dinamikusan képes eladóként és vevőként is működni.`
+  * Profiloldal: saját adatok módosítása, saját hirdetések és korábbi vásárlások/eladások megtekintése.
+* **Hirdetéskezelés (Eladói oldal):**
+  * `Új termék feltöltése (cím, leírás, ár, kategória, állapot, képfeltöltés).`
+  * Saját hirdetések módosítása, törlése és státuszának állítása (Pl. *Aktív*, *Eladva*, *Inaktív*).
+* **Vásárlás és böngészés (Vevői oldal):**
+  * `Termékek kilistázása`, keresés kulcsszó alapján és szűrés kategóriák szerint.
+  * Termék adatlapjának megtekintése képekkel és az eladó adataival.
+  * Kosárkezelés és megrendelés leadása.
+* **Adminisztráció és moderáció:**
+  * Adminisztrátori szerepkör a nem megfelelő hirdetések eltávolítására és a szabályszegő felhasználók letiltására.
+
+
+
+### 2.3. Nem funkcionális követelmények
+
+* **Technológiai stack:**
+  * `Backend:` `PHP`
+  * `Adatbázis:` `MySQL`
+  * `Frontend:` `HTML5, CSS3 (tiszta CSS rendszer a reszponzivitásért).`
+* **Biztonság:**
+  * `Jelszavak biztonságos tárolása adatbázisban (password_hash / password_verify).`
+  * SQL Injection elleni védelem (Prepared Statements / PDO használata).
+  * XSS (Cross-Site Scripting) elleni védelem a beviteli mezőknél.
+* **Teljesítmény és használhatóság:**
+  * `Asztali böngészőkön reszponzív, jól használható felület.`
+  * `Gyors oldalbetöltési idő és átlátható navigáció.`
+
+## 3. Költség- és erőforrás-szükségletek
+
+Az erőforrásigényünk összesen `57` személynap, átlagosan `19` személynap/fő.
+
+A rendelkezésünkre áll összesen `3 * 70 = 210` pont.
+
+
+## 4. Szervezeti felépítés és felelősségmegosztás
+
+`A projekt egyetemi célú. A Webshop projektet a mi csapatunk fogja végrehajtani, amely jelenleg három fejlesztőből áll. A csapatban található tapasztalt személyek akik számos sikeres projektten vannak túl.`
+ - `Apró Dobos Gáspár (1 év egyetemi tapasztalat, technikumi képzés)`
+ - `Kiss Dominik (1 év egyetemi tapasztalat, technikumi képzés)`
+ - `Molnár Márton (több mint 1 év egyetemi tapasztalat)`
+
+
+### 4.1 Projektcsapat
+
+A projekt a következő emberekből áll:
+
+| Név          | Pozíció          |   E-mail cím         |
+|--------------|------------------|-------------------------------|
+| `Apró Dobos Gáspár` | Projektmenedzser | `aprodobos2005@gmail.com`    |
+| `Kiss Dominik` | Projekt tag      | `kiss.domo777@gmail.com`    |
+| `Molnár Márton`   | Projekt tag      | `mboy23362@gmail.com`    |
+
+
+## 5. A munka feltételei
+
+### 5.1. Munkakörnyezet
+
+#### A projekt a következő munkaállomásokat fogja használni a munka során:
+
+ - `Munkaállomások: 3 db, Windows 11-es operáció rendszerrel`
+ - `Asztali számítógép (CPU: AMD Ryzen 5 5600, RAM: 32GB, GPU: AMD Radeon RX 6600)`
+  - `Asztali számítógép (CPU: AMD Ryzen 5 7600, RAM: 32GB, GPU: AMD Radeon RX 7600xt )`
+  - `Asztali számítógép (CPU: i7 7700k gtx 1060, RAM: 16GB, GPU: ddr4 2400mhz)`
+
+A projekt a következő technológiákat/szoftvereket fogja használni a munka során: 
+
+ - `MD (Mark Down)`
+ - `MYSQL (Adat Bázis)`
+ - `PHP`
+ - `VSC (Visual Studio Code)`
+ - `Git verziókövető (GitHub)`
+ 
+
+
+### 5.2. Rizikómenedzsment
+
+| Kockázat leírása | Valószínűség | Hatás | Enyhítési / Elhárítási terv |
+| :--- | :---: | :---: | :--- |
+| ` Feladatok csúszása időhiány miatt` | `Közepes` | `Magas` | `Git hálózat és GitHub Issue-k rendszeres követése, heti sprint megbeszélések.` |
+| ` Biztonsági hiányosságok (pl. SQL Injection)` | `Alacsony` | `Magas` | `Kizárólag PDO és előkészített lekérdezések (Prepared Statements) használata PHP-ban.` |
+| `Adatbázis-architektúra tervezési hibái` | `Közepes` | `Közepes` | `Az ER-diagram alapos előzetes átbeszélése és normalizálása a kódolás megkezdése előtt.` |
+| `Inkompatibilitási problémák a csapattagok között` | `Alacsony` | `Közepes` | `Közös Git konvenciók, egységes kötelező mappa- és fájlstruktúra meghatározása.` |
+
+## 6. ER-diagram
+
+```mermaid
+erDiagram
+    USERS {
+        int id PK
+        string name
+        string email UK
+        string password_hash
+        string phone
+        string address
+        string role
+        string status
+        datetime created_at
+    }
+
+    CATEGORIES {
+        int id PK
+        string name
+        string description
+    }
+
+    LISTINGS {
+        int id PK
+        int user_id FK
+        int category_id FK
+        string title
+        string description
+        decimal price
+        string condition
+        string status
+        datetime created_at
+        datetime updated_at
+    }
+
+    LISTING_IMAGES {
+        int id PK
+        int listing_id FK
+        string image_path
+        int sort_order
+    }
+
+    ORDERS {
+        int id PK
+        int buyer_id FK
+        string status
+        decimal total_amount
+        string delivery_address
+        datetime created_at
+    }
+
+    ORDER_ITEMS {
+        int id PK
+        int order_id FK
+        int listing_id FK
+        int seller_id FK
+        decimal unit_price
+        int quantity
+    }
+
+    USERS ||--o{ LISTINGS : creates
+    CATEGORIES ||--o{ LISTINGS : categorizes
+    LISTINGS ||--o{ LISTING_IMAGES : has
+    USERS ||--o{ ORDERS : places
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    LISTINGS ||--o{ ORDER_ITEMS : purchased_as
+    USERS ||--o{ ORDER_ITEMS : sells
+```
+
+## 7. Sequence diagram
+
+A diagram a hirdetés megtekintésétől a rendelés adatbázisba történő mentéséig mutatja be a folyamatot.
+
+```mermaid
+sequenceDiagram
+    actor Vevő
+    participant UI as Webes felület
+    participant Auth as Hitelesítés
+    participant Listing as Hirdetéskezelő
+    participant Order as Rendeléskezelő
+    participant DB as MySQL adatbázis
+
+    Vevő->>UI: Hirdetés megnyitása
+    UI->>Listing: Hirdetés lekérése (listing_id)
+    Listing->>DB: SELECT LISTINGS
+    DB-->>Listing: Hirdetés adatai
+    Listing->>DB: SELECT USERS (eladó adatai)
+    DB-->>Listing: Eladó adatai
+    Listing-->>UI: Hirdetés és eladó megjelenítése
+    UI-->>Vevő: Termék adatlapja
+
+    Vevő->>UI: Vásárlás / rendelés indítása
+    UI->>Auth: Bejelentkezés ellenőrzése
+    Auth->>DB: SELECT USERS (felhasználó)
+    DB-->>Auth: Felhasználói adatok
+    Auth-->>UI: Hitelesítés eredménye
+
+    alt Nincs bejelentkezve
+        UI-->>Vevő: Bejelentkezés kérése
+    else Bejelentkezve
+        UI->>Order: Rendelés létrehozása
+        Order->>DB: Hirdetés és státusz ellenőrzése
+        DB-->>Order: Hirdetés adatai
+
+        alt Hirdetés nem elérhető
+            Order-->>UI: Vásárlás elutasítása
+            UI-->>Vevő: A hirdetés már nem elérhető
+        else Hirdetés elérhető
+            Order->>DB: INSERT INTO ORDERS
+            DB-->>Order: order_id
+            Order->>DB: INSERT INTO ORDER_ITEMS
+            Note over Order,DB: order_id, listing_id, seller_id, unit_price, quantity
+            DB-->>Order: Rendelési tétel mentve
+            Order->>DB: UPDATE LISTINGS status = 'sold'
+            DB-->>Order: Hirdetés frissítve
+            Order-->>UI: Rendelés sikeres
+            UI-->>Vevő: Rendelés visszaigazolása
+        end
+    end
+```
+## 8. Use Case Diagram
+```mermaid
+graph LR
+    User[Felhasználó / Vevő / Eladó] --> UC1[Regisztráció / Bejelentkezés]
+    User --> UC2[Profil módosítása]
+    User --> UC3[Hirdetés felvétele]
+    User --> UC4[Termékek böngészése]
+    User --> UC5[Kosárkezelés és rendelés]
+    
+    Admin[Adminisztrátor] --> UC1
+    Admin --> UC6[Moderálás és törlés]
